@@ -18,7 +18,6 @@
       color: $gray;
       cursor: pointer;
       position: absolute;
-      text-align: center;
       top: 10px;
       right: 10px;
       font-size: 2rem;
@@ -30,9 +29,11 @@
       }
     }
   
-    // the links inside the nav element
+    // the links inside the nav element / Left 
     & a {
-      text-align: center;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-align: left;
       padding: 25px;
       text-decoration: none;
       font-size: 1.3rem;
@@ -43,14 +44,46 @@
 
         //hover/focus state
         &:hover,
-        &:focus {
+        &:focus,
+        &.active {
           color: white;
           background: lighten($brand-blue, 5%);
         }
     }
 }
 
+div.inside {
+  background: lighten($brand-blue, 10%);
+  max-height: 0; //aceste
+  overflow: hidden; // doua linii, sunt motivul pentru care nu se vede continutul
+  transition: max-height 0.2s ease-out;
+  & a {
+    text-align: left;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 1rem;
+    transition: transform .2s ease-in-out,
+                box-shadow .2s ease-in-out;
+    
+    &:hover,
+    &:focus {
+      transform: scale(1.03);
+      -webkit-box-shadow: inset 10px 0px 0px 0px lighten($brand-one, 10%);
+      -moz-box-shadow: inset 10px 0px 0px 0px lighten($brand-one, 10%);
+      box-shadow: inset 10px 0px 0px 0px lighten($brand-one, 10%);
+    }
+  }
+}
 
+// sageata jos
+.sublinks::after {
+  font-family: "ElegantIcons";
+  content: "\33";
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1rem;
+}
 
 
 //============Bara de navigatie dreapta
@@ -74,7 +107,6 @@
       color: $gray;
       cursor: pointer;
       position: absolute;
-      text-align: center;
       top: 10px;
       left: 10px;
       font-size: 2rem;
@@ -86,8 +118,9 @@
       }
   }
   
-  // the links inside the nav element
+  // the links inside the nav element / Right
     & a {
+      letter-spacing: 1px;
       text-align: center;
       padding: 25px;
       text-decoration: none;

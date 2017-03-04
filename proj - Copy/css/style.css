@@ -1200,7 +1200,6 @@ you can use the generic selector below, but it's slower:
     color: #edf2f4;
     cursor: pointer;
     position: absolute;
-    text-align: center;
     top: 10px;
     right: 10px;
     font-size: 2rem;
@@ -1208,7 +1207,9 @@ you can use the generic selector below, but it's slower:
     .side_nav span.icon_close:hover, .side_nav span.icon_close:focus {
       color: #fdfdfe; }
   .side_nav a {
-    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: left;
     padding: 25px;
     text-decoration: none;
     font-size: 1.3rem;
@@ -1216,9 +1217,34 @@ you can use the generic selector below, but it's slower:
     display: block;
     -webkit-transition: .3s;
     transition: .3s; }
-    .side_nav a:hover, .side_nav a:focus {
+    .side_nav a:hover, .side_nav a:focus, .side_nav a.active {
       color: white;
       background: #2c76bc; }
+
+div.inside {
+  background: #3283cf;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out; }
+  div.inside a {
+    text-align: left;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 1rem;
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out; }
+    div.inside a:hover, div.inside a:focus {
+      transform: scale(1.03);
+      -webkit-box-shadow: inset 10px 0px 0px 0px #005594;
+      -moz-box-shadow: inset 10px 0px 0px 0px #005594;
+      box-shadow: inset 10px 0px 0px 0px #005594; }
+
+.sublinks::after {
+  font-family: "ElegantIcons";
+  content: "\33";
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1rem; }
 
 .account-nav {
   -moz-box-shadow: 0px 14px 25px 1px rgba(0, 0, 0, 0.5);
@@ -1239,7 +1265,6 @@ you can use the generic selector below, but it's slower:
     color: #edf2f4;
     cursor: pointer;
     position: absolute;
-    text-align: center;
     top: 10px;
     left: 10px;
     font-size: 2rem;
@@ -1247,6 +1272,7 @@ you can use the generic selector below, but it's slower:
     .account-nav span.icon_close:hover, .account-nav span.icon_close:focus {
       color: #fdfdfe; }
   .account-nav a {
+    letter-spacing: 1px;
     text-align: center;
     padding: 25px;
     text-decoration: none;
