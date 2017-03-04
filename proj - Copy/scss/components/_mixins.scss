@@ -1,0 +1,35 @@
+//shadows
+
+//a subtle shadow to raise interactive components and add affordance.
+@mixin subtle_shadow {
+	-moz-box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.54);
+	-webkit-box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.54);
+	box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.54);
+}
+
+
+
+//a more pronounced shadow for a hover effect on components.
+@mixin hover_shadow {
+	-moz-box-shadow: 0px 10px 25px -1px rgba(0,0,0,0.44);
+	-webkit-box-shadow: 0px 10px 25px -1px rgba(0,0,0,0.44);
+	box-shadow: 0px 10px 25px -1px rgba(0,0,0,0.44);
+}
+
+
+
+//a strong shadow to give perspective to dropdowns/popovers and other similar components.
+@mixin strong_shadow {
+	-moz-box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.5);
+}
+
+
+
+//a distant shadow for modal components.
+@mixin distant_shadow {
+	-moz-box-shadow: 0px 14px 25px 1px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0px 14px 25px 1px rgba(0,0,0,0.5);
+	box-shadow: 0px 14px 25px 1px rgba(0,0,0,0.5);
+}
